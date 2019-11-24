@@ -9,7 +9,10 @@ import { AppService } from '../app.service';
 })
 export class LandingPageComponent  {
   private gitRepos;
-  
+  // private cardImageObj = {
+  //   "css":"card-img-left",
+  //   "url":"../../assets/images/IMG-20180429-WA0001-01.jpeg"
+  // }
   constructor(private appService: AppService) { }
 
 

@@ -19,30 +19,23 @@ export class AppComponent {
 
  
   @HostListener('mousewheel', ['$event']) getScrollHeight(event) {
-    console.log(event)
+   
     if(this.appService.isElementMounted){
       if(this.currentIndex < 3 && event.deltaY > 0){
-        console.log('increasing '+this.currentIndex)
+        
         this.currentIndex = this.currentIndex + 1;
-        this.appService.isElementMounted = false;
-        setTimeout(() => {
-          this.appService.isElementMounted = true;
-        }, 2000);
+        this.appService.waitForAnimation();
       }
       else if(this.currentIndex > 0 && event.deltaY < 0){
-        console.log('decreasing '+this.currentIndex)
+        
         this.currentIndex = this.currentIndex - 1;
-        this.appService.isElementMounted = false;
-  
-        setTimeout(() => {
-          this.appService.isElementMounted = true;
-        }, 2000);
+        this.appService.waitForAnimation();
       }
     }
  }
 
  checkifActive(key:string): boolean{
-   console.log('keyyyy '+key)
+
   if(this.currentIndex === +key){
     return true;
   }
@@ -53,10 +46,6 @@ export class AppComponent {
 
  onBulletClicked(key:string){
    this.currentIndex = +key;
-   this.appService.isElementMounted = false;
-  
-        setTimeout(() => {
-          this.appService.isElementMounted = true;
-        }, 2000);
+   this.appService.waitForAnimation();
  }
 }

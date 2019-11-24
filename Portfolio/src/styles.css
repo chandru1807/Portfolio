@@ -2,3 +2,8 @@
 body{
     background-color: #141414 !important;
 }
+
+.portfolio-container{
+    margin-right: 5%;
+    margin-left: 5%;
+}

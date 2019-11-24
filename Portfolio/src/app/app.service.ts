@@ -8,4 +8,11 @@ export class AppService {
   isElementMounted = true;
 
   constructor() { }
+
+  waitForAnimation(){
+    this.isElementMounted = false;
+    setTimeout(() => {
+      this.isElementMounted = true;
+    }, 1000);
+  }
 }

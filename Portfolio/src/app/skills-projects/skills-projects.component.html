@@ -1,0 +1,29 @@
+<div class="portfolio-container">
+<div class="flex">
+    <div class="skills-wrap">
+        <div class="skills-container">
+            <div class="skills">
+            <ng-container *ngFor="let skill of skills">
+                <div class="skill">
+                    <div  class="skill-marker">
+                        <span [id]="skill.skill" style="width: 0%;"><span style="float: right; padding: 0 10px;">{{skill.profiency+'%'}}</span></span>
+                        <span style="padding: 0 10px;">
+                            {{skill.skill}}
+                        </span>
+                    </div>
+                </div>
+            </ng-container>
+            </div>
+        </div>
+    </div>
+
+    <div class="projects-wrap">
+        <ng-container *ngFor="let repo of repos">
+            <div [id]="repo.id" class="cn" (click)="routeIt(repo.clone_url)">
+
+            </div>
+        </ng-container>
+    </div>
+
+</div>
+</div>

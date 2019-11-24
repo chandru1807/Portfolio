@@ -1,16 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AppService } from './app.service';
+import { CardComponent } from './card/card.component';
+import { AboutMeComponent } from './about-me/about-me.component';
+import { SkillsProjectsComponent } from './skills-projects/skills-projects.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    CardComponent,
+    AboutMeComponent,
+    SkillsProjectsComponent
   ],
   imports: [
     BrowserModule,
@@ -18,6 +24,7 @@ import { AppService } from './app.service';
     HttpClientModule,
   ],
   providers: [AppService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule { }

@@ -1,72 +1,124 @@
-img{
-    height: 200px;
-    width: 200px;
-    left: 0%;
-    border-radius: 100px;
-    -webkit-animation: img1 2s infinite alternate 1s;
-    animation: img1 5s infinite alternate 1s linear;
-    transition: transform 5s ease;
-    -webkit-transition:transform 1s ease;
-    -moz-transition: width 5s ease;
-    -o-transition: width 5s ease;
+
+
+
+.typewriter {
+  font-family: Courier, monospace;
+  display: inline-block;
+}
+.welcome{
+  font-family: Courier, monospace;
+  color: white;
+  opacity: 0%;
+  
+  animation: slideFromBottom 1s 3.5s forwards;
 }
 
-img:hover{
-    transform: scale(2);
-    
+@keyframes slideFromBottom{
+  from{opacity: 0;}
+  to{opacity: 1;}
 }
 
-@-webkit-keyframes img1{
-    0%{ opacity: 1;}
-    10%{ opacity: 0;}
-    20%{ opacity: 0;}
-    27%{ opacity: 1;}
-    35%{ opacity: 0;}
-    45%{ opacity: 1;}
-    50%{ opacity: 0;}
-    58%{ opacity: 1;}
-    65%{ opacity: 0;}
-    75%{ opacity: 1;}
-    80%{ opacity: 0;}
-    85%{ opacity: 1;}
-    100%{ opacity: 1;}
-}
-@keyframes img1{
-    0%{ opacity: 1;}
-    10%{ opacity: 0;}
-    20%{ opacity: 0;}
-    27%{ opacity: 1;}
-    35%{ opacity: 0;}
-    45%{ opacity: 1;}
-    50%{ opacity: 0;}
-    58%{ opacity: 1;}
-    65%{ opacity: 0;}
-    75%{ opacity: 1;}
-    80%{ opacity: 0;}
-    85%{ opacity: 1;}
-    100%{ opacity: 1;}
+@media only screen and (max-width: 599px){
+  .text-font{
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  .landing-page{
+    margin-top: 50%;
+    animation: slideIn 1s;
+    text-align: center;
+  }
+  
+  
+  @keyframes slideIn{
+    from{opacity: 0;margin-top: 0%;}
+    to{opacity: 1;margin-top: 50%;}
+  }
 }
 
-@-webkit-keyframes example{
-    from{ background-color: blue;}
-    to{ background-color: yellow;}
-}
-@keyframes example{
-    from{ background-color: blue;}
-    to{ background-color: yellow;}
-}
-
-.trans{
-    width: 100px;
-    height: 100px;
-    background-color: red;
-    transition: width 2s ease;
-    animation-name: example;
-    animation-duration: 0.5s;
-    animation-iteration-count: 2;
-    animation-direction: alternate;
-    animation-delay: 1s;
-    animation-fill-mode: both;
+@media only screen and (min-width: 600px){
+  .text-font{
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  .landing-page{
+    margin-top: 50%;
+    animation: slideIn 1s;
+    text-align: center;
+  }
+  @keyframes slideIn{
+    from{opacity: 0;margin-top: 0%;}
+    to{opacity: 1;margin-top: 50%;}
+  }
 }
 
+@media only screen and (min-width: 900px){
+  .text-font{
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+  }
+  .landing-page{
+    margin-top: 30%;
+    animation: slideIn 1s;
+    text-align: center;
+  }
+  @keyframes slideIn{
+    from{opacity: 0;margin-top: 0%;}
+    to{opacity: 1;margin-top: 30%;}
+  }
+}
+
+@media only screen and (min-width: 1200px){
+  .text-font{
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 2px;
+  }
+  .landing-page{
+    margin-top: 25%;
+    animation: slideIn 1s;
+    text-align: center;
+  }
+  
+  @keyframes slideIn{
+    from{opacity: 0;margin-top: 0%;}
+    to{opacity: 1;margin-top: 25%;}
+  }
+}
+
+
+.typewriter-text {
+  display: inline-block;
+ color: white;
+  overflow: hidden;
+  
+ animation: typing 3s steps(30, end), blink .75s step-end infinite;
+  white-space: nowrap;
+  
+  border-right: 4px solid orange;
+  box-sizing: border-box;
+}
+
+
+
+@keyframes typing {
+  from { 
+      width: 0% 
+  }
+  to { 
+      width: 100% 
+  }
+}
+
+@keyframes blink {
+  from, to { 
+      border-color: transparent 
+  }
+  50% { 
+      border-color: orange; 
+  }
+}
 
