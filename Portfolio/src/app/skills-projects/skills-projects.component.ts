@@ -11,7 +11,7 @@ export class SkillsProjectsComponent implements OnInit {
 
   private skills = [
     {'skill':'Angular',
-    'profiency':80
+    'profiency':90
     },
     {'skill':'Java',
     'profiency':80
@@ -46,7 +46,7 @@ export class SkillsProjectsComponent implements OnInit {
         let skill = document.getElementById(s.skill);
         skill.style.width = s.profiency+'%';
         skill.style.transition = 'width 1s ease '+delay+'s'
-        delay += 0.1;
+        delay += 0.05;
       }
       console.log(repos);
       this.repos = repos;

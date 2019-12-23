@@ -10,7 +10,7 @@
   color: white;
   opacity: 0%;
   
-  animation: slideFromBottom 1s 3.5s forwards;
+  animation: slideFromBottom 1s 3.0s forwards ease-in-out;
 }
 
 @keyframes slideFromBottom{
