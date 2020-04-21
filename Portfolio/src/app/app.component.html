@@ -1,0 +1,28 @@
+<div style="position: fixed;top: 0px;left: 0px;width: 100%;height: 100%;overflow: hidden;">
+
+  <div class="bulletGroup">
+    <ng-container *ngFor="let bulletData of bullets | keyvalue ">
+      <div class="bullet" (click)="onBulletClicked(bulletData.key)" [ngClass]="{'active':checkifActive(bulletData.key)}"></div>
+    </ng-container>
+  </div>
+
+  <ng-container *ngIf="currentIndex === 2">
+    <div class="portfolio-container">
+    <landing-page></landing-page>
+  </div>  
+  </ng-container>
+  <ng-container *ngIf="currentIndex === 1">
+      <div class="portfolio-container">
+    <about-me></about-me>
+      </div>
+  
+  </ng-container>
+  
+  <ng-container *ngIf="currentIndex === 0">
+      
+    <skills-projects></skills-projects>
+
+  </ng-container>
+
+</div>
+  

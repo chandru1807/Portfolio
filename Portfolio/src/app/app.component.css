@@ -1,0 +1,26 @@
+
+.bulletGroup{
+    position: absolute;
+    top: 45%;
+    /* bottom: 50%; */
+    right: 1%;
+}
+
+.bullet{
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: 1px solid white;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.active{
+    background-color: red;
+    transition: background-color 0.5s ease;
+}
+
+
+
+
+
