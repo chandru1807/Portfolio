@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 
@@ -10,29 +10,38 @@ import { HttpClient } from '@angular/common/http';
 export class SkillsProjectsComponent implements OnInit {
 
   private skills = [
-    {'skill':'Angular',
-    'profiency':90
+    {
+      'skill': 'Angular',
+      'profiency': 90
     },
-    {'skill':'Java',
-    'profiency':80
+    {
+      'skill': 'Java',
+      'profiency': 80
     },
-    {'skill':'Typescript',
-    'profiency':70
+    {
+      'skill': 'Typescript',
+      'profiency': 70
     },
-    {'skill':'Spring',
-    'profiency':70
-    },{'skill':'Python',
-    'profiency':50
+    {
+      'skill': 'Spring',
+      'profiency': 70
+    }, {
+      'skill': 'Python',
+      'profiency': 50
     },
-    {'skill':'Sql',
-    'profiency':50
+    {
+      'skill': 'Sql',
+      'profiency': 50
     },
-    {'skill':'Flutter',
-    'profiency':70
-    },{'skill':'Dart',
-    'profiency':70
-    },{'skill':'Hibernate',
-    'profiency':70
+    {
+      'skill': 'Flutter',
+      'profiency': 70
+    }, {
+      'skill': 'Dart',
+      'profiency': 70
+    }, {
+      'skill': 'Hibernate',
+      'profiency': 70
     }
   ];
   private repos;
@@ -40,29 +49,51 @@ export class SkillsProjectsComponent implements OnInit {
 
   ngOnInit() {
     let url = `https://api.github.com/users/chandru1807/repos`;
-    this.http.get(url).subscribe(repos => {
-      let delay = 0;
-      for(let s of this.skills){
-        let skill = document.getElementById(s.skill);
-        skill.style.width = s.profiency+'%';
-        skill.style.transition = 'width 1s ease '+delay+'s'
-        delay += 0.05;
-      }
-      console.log(repos);
-      this.repos = repos;
-      setTimeout(() => {
-        delay = 0;
-        for(let repo of this.repos){
-          let r = document.getElementById(repo.id);
-          r.style.opacity = '1';
-          r.style.transition = 'opacity 2s ease '+delay+'s'
-          delay += 0.1;
-        }
-      }, 0);
-    })
+    // this.http.get('https://api.github.com/users/chandru1807').subscribe(data => {
+    //   console.log(data);
+
+    // });
+    // setTimeout(() => {
+      
+    // }
+    // }, 0);
+    // this.http.get(url).subscribe(repos => {
+    setTimeout(() => {
+      let svgTextDelay = 1;
+      let wrappers = document.querySelectorAll(".capability-text-wrapper");
+      console.log(wrappers);
+      wrappers.forEach(wrap => {
+        let el = wrap as HTMLElement;
+
+        el.style.opacity = '1';
+        el.style.transition = `opacity 2s ease ${svgTextDelay}s`;
+        svgTextDelay+=0.2; 
+      });
+
+      let delay = 1;
+    for(let s of this.skills){
+      let skill = document.getElementById(s.skill);
+      skill.style.width = s.profiency+'%';
+      skill.style.transition = 'width 1s cubic-bezier(0.5, -0.55, 0.6, 1.5) '+delay+'s'
+      delay += 0.02;
+    }
+    }, 0);
+
+    //   console.log(repos);
+    //   this.repos = repos;
+    //   setTimeout(() => {
+    //     delay = 0;
+    //     for(let repo of this.repos){
+    //       let r = document.getElementById(repo.id);
+    //       r.style.opacity = '1';
+    //       r.style.transition = 'opacity 2s ease '+delay+'s'
+    //       delay += 0.1;
+    //     }
+    //   }, 0);
+    // })
   }
 
-  routeIt(url){
+  routeIt(url) {
     window.open(url, '_blank');
   }
 

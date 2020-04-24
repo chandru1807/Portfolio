@@ -1,4 +1,5 @@
-<div style="position: fixed;width: 100vw;height: 100vh;background-image: linear-gradient(-140deg,#2c1d3a, #18121e) !important;">
+<div
+  style="position: fixed;width: 100vw;height: 100vh;background-image: linear-gradient(-140deg,#2c1d3a, #18121e);">
   <div class="row" style="height: 100vh; width: 100vw;z-index: -1;margin: 0;">
     <div class="col-2 fixedGrid" style="border-left: 1px solid white;"></div>
     <div class="col-2 fixedGrid"></div>
@@ -9,33 +10,36 @@
   </div>
   <div class="bulletGroup">
     <ng-container *ngFor="let bulletData of bullets | keyvalue ">
-      <div class="bullet" (click)="onBulletClicked(bulletData.key)" [ngClass]="{'active':checkifActive(bulletData.key)}"></div>
+      <div class="bullet" (click)="onBulletClicked(bulletData.key)"
+        [ngClass]="{'active':checkifActive(bulletData.key)}"></div>
     </ng-container>
   </div>
 
   <ng-container *ngIf="currentIndex === 0">
     <div class="portfolio-container">
-    <landing-page></landing-page>
-    <div class="row" style="justify-content: center;">
-      <div class="col-md-1 arrow-wrap" (click)="onBulletClicked('1')">
-      <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path class="heroicon-ui" d="M11 18.59V3a1 1 0 0 1 2 0v15.59l5.3-5.3a1 1 0 0 1 1.4 1.42l-7 7a1 1 0 0 1-1.4 0l-7-7a1 1 0 0 1 1.4-1.42l5.3 5.3z"/></svg>
+      <landing-page></landing-page>
+      <div class="row" style="justify-content: center;">
+        <div class="col-md-1 arrow-wrap" (click)="onBulletClicked('1')">
+          <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+            <path class="heroicon-ui"
+              d="M11 18.59V3a1 1 0 0 1 2 0v15.59l5.3-5.3a1 1 0 0 1 1.4 1.42l-7 7a1 1 0 0 1-1.4 0l-7-7a1 1 0 0 1 1.4-1.42l5.3 5.3z" />
+            </svg>
 
+        </div>
       </div>
     </div>
-  </div>  
   </ng-container>
   <ng-container *ngIf="currentIndex === 1">
-      <div class="portfolio-container">
-    <about-me></about-me>
-      </div>
-  
-  </ng-container>
-  
-  <ng-container *ngIf="currentIndex === 2">
-      
-    <skills-projects></skills-projects>
+    <div class="portfolio-container">
+      <about-me></about-me>
+    </div>
 
+  </ng-container>
+
+  <ng-container *ngIf="currentIndex === 2">
+    <div class="portfolio-container">
+      <skills-projects></skills-projects>
+    </div>
   </ng-container>
 
 </div>
-  
