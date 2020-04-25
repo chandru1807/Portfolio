@@ -1,5 +1,5 @@
-<div
-  style="position: fixed;width: 100vw;height: 100vh;background-image: linear-gradient(-140deg,#2c1d3a, #18121e);">
+<div class="wrapper"
+  style="position: fixed;width: 100vw;background-image: linear-gradient(-140deg,#2c1d3a, #18121e);">
   <div class="row" style="height: 100vh; width: 100vw;z-index: -1;margin: 0;">
     <div class="col-2 fixedGrid" style="border-left: 1px solid white;"></div>
     <div class="col-2 fixedGrid"></div>
@@ -29,14 +29,14 @@
       </div>
     </div>
   </ng-container>
-  <ng-container *ngIf="currentIndex === 1">
+  <!-- <ng-container *ngIf="currentIndex === 1">
     <div class="portfolio-container">
       <about-me></about-me>
     </div>
 
-  </ng-container>
+  </ng-container> -->
 
-  <ng-container *ngIf="currentIndex === 2">
+  <ng-container *ngIf="currentIndex === 1">
     <div class="portfolio-container">
       <skills-projects></skills-projects>
     </div>
