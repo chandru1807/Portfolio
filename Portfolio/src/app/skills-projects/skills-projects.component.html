@@ -1,11 +1,11 @@
-<div class="row" style="justify-content: center;margin: 20px;">
+<div class="row" style="justify-content: center;height: 5vh;">
   <div class="skills-header">
     Skills
   </div>
 </div>
 
-<div class="row">
-  <div class="col-12">
+<div class="row" style="height: 95vh;">
+  <div class="col-12 add-skills-wrapper">
     <div class="row">
       <div class="col-3 add-skills">
         <div class="svg-wrapper">
@@ -128,15 +128,12 @@
       </div>
     </div>
   </div>
-  <div class="col-12" style="margin-top: 20px;height: 60vh;
-  display: flex;
-  flex-flow: column;
-  justify-content: space-around;">
+  <div class="col-12 skills-wrapper">
     <ng-container *ngFor="let skill of skills">
-      <div class="row" style="margin: 10px;justify-content: center;">
+      <div class="row" style="justify-content: center;">
         <div class="col-3 col-sm-2 skill-text">{{skill.skill}}</div>
         <div class="col-8 col-sm-7 skill-bar-wrapper">
-          <div [id]="skill.skill" class="row skill-bar">{{skill.profiency}}%</div>
+          <div [id]="skill.skill" class="row skill-bar"><span class="skill-profiency">{{skill.profiency}}%</span></div>
         </div>
       </div>
     </ng-container>

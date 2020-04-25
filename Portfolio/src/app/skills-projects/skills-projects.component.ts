@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SkillsProjectsComponent implements OnInit {
 
-  private skills = [
+  public skills = [
     {
       'skill': 'Angular',
       'profiency': 90
@@ -42,10 +42,18 @@ export class SkillsProjectsComponent implements OnInit {
     }, {
       'skill': 'Hibernate',
       'profiency': 70
+    },
+    {
+      'skill': 'HTML',
+      'profiency': 70
+    },
+    {
+      'skill': 'CSS',
+      'profiency': 70
     }
   ];
-  private repos;
-  constructor(private http: HttpClient) { }
+  public repos;
+  constructor(public http: HttpClient) { }
 
   ngOnInit() {
     let url = `https://api.github.com/users/chandru1807/repos`;
@@ -66,11 +74,11 @@ export class SkillsProjectsComponent implements OnInit {
         let el = wrap as HTMLElement;
 
         el.style.opacity = '1';
-        el.style.transition = `opacity 2s ease ${svgTextDelay}s`;
+        el.style.transition = `opacity 1s ease ${svgTextDelay}s`;
         svgTextDelay+=0.2; 
       });
 
-      let delay = 1;
+      let delay = 0.75;
     for(let s of this.skills){
       let skill = document.getElementById(s.skill);
       skill.style.width = s.profiency+'%';
