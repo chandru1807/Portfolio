@@ -127,7 +127,7 @@ svg{
 }
 
 .add-skills-wrapper{
-    height: 25vh;
+    height: 25%;
     display: flex;
     align-items: center; 
     justify-content: center;
@@ -135,7 +135,7 @@ svg{
 
 .skills-wrapper{
     padding: 20px;
-    height: 70vh;
+    height: 70%;
   display: flex;
   flex-flow: column;
   justify-content: space-around;
@@ -143,9 +143,9 @@ svg{
 
 @media all and (max-width:770px){
     .add-skills-wrapper{
-        height: 15vh;
+        height: 15%;
     }
     .skills-wrapper{
-        height: 80vh;
+        height: 80%;
     }
 }

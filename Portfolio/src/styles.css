@@ -4,7 +4,9 @@
     
     background-color: #141414 !important;
 } */
-
+html, body, .wrapper{
+    height: 100%;
+}
 .portfolio-container{
     margin-right: 5%;
     margin-left: 5%;
