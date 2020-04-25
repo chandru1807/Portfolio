@@ -7,9 +7,9 @@ import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/cor
 })
 export class CardComponent implements OnChanges {
 
-  @Input() imgInput: {};
-  @Input() titleInput: {};
-  @Input() bodyInput: {};
+  @Input() imgInput;
+  @Input() titleInput;
+  @Input() bodyInput;
 
   constructor() { }
 
