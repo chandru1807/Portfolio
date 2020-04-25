@@ -7,6 +7,12 @@
 html, body, .wrapper{
     height: 100%;
 }
+
+.wrapper{
+    -ms-touch-action: none;
+    touch-action: none;
+}
+
 .portfolio-container{
     margin-right: 5%;
     margin-left: 5%;

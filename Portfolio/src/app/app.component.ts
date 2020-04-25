@@ -81,10 +81,11 @@ export class AppComponent implements AfterViewInit {
       initialX = null;
       initialY = null;
 
-      //e.preventDefault();
+      e.preventDefault();
+      //e.stopPropagation();
     };
-    window.addEventListener("touchstart", startTouch, false);
-    window.addEventListener("touchmove", moveTouch, false);
+    window.addEventListener("touchstart", startTouch, { passive: false });
+    window.addEventListener("touchmove", moveTouch, { passive: false });
   }
 
 
