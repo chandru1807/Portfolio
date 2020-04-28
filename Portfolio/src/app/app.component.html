@@ -1,5 +1,4 @@
-<div class="wrapper"
-  style="position: fixed;width: 100vw;background-image: linear-gradient(-140deg,#2c1d3a, #18121e);">
+<div class="wrapper" style="position: fixed;width: 100vw;background-image: linear-gradient(-140deg,#2c1d3a, #18121e);">
   <div class="row" style="height: 100vh; width: 100vw;z-index: -1;margin: 0;">
     <div class="col-2 fixedGrid" style="border-left: 1px solid white;"></div>
     <div class="col-2 fixedGrid"></div>
@@ -11,7 +10,11 @@
   <div class="bulletGroup">
     <ng-container *ngFor="let bulletData of bullets | keyvalue ">
       <div class="bullet" (click)="onBulletClicked(bulletData.key)"
-        [ngClass]="{'active':checkifActive(bulletData.key)}"></div>
+        [ngClass]="{'active':checkifActive(bulletData.key)}">
+      <!-- <div class="tool-tip" [id]="bulletData.key">
+        {{bulletData.value}}
+      </div> -->
+      </div>
     </ng-container>
   </div>
 
@@ -23,23 +26,25 @@
           <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
             <path class="heroicon-ui"
               d="M11 18.59V3a1 1 0 0 1 2 0v15.59l5.3-5.3a1 1 0 0 1 1.4 1.42l-7 7a1 1 0 0 1-1.4 0l-7-7a1 1 0 0 1 1.4-1.42l5.3 5.3z" />
-            </svg>
+          </svg>
 
         </div>
       </div>
     </div>
   </ng-container>
-  <!-- <ng-container *ngIf="currentIndex === 1">
-    <div class="portfolio-container">
-      <about-me></about-me>
-    </div>
 
-  </ng-container> -->
 
   <ng-container *ngIf="currentIndex === 1">
     <div class="portfolio-container">
       <skills-projects></skills-projects>
     </div>
+  </ng-container>
+
+  <ng-container *ngIf="currentIndex === 2">
+    <div class="portfolio-container">
+      <about-me></about-me>
+    </div>
+
   </ng-container>
 
 </div>

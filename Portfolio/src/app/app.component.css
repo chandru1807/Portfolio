@@ -21,8 +21,8 @@
 
 @media all and (max-width:770px){
     .bullet{
-        height: 12px;
-        width: 12px;
+        height: 14px;
+        width: 14px;
     }
 }
 
@@ -74,6 +74,39 @@ svg{
     width: 40px;
     height: 40px;
     cursor: pointer;
+  }
+
+
+  .tool-tip{
+    position: absolute;
+    background-color: white; 
+    opacity: 0;
+    right: 30px;
+    width: 100px;
+    transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    display: block;
+    transform: scale3d(0,0,0);
+    /* animation: tool-tip-fade 2s; */
+  }
+
+  .tool-tip::after {
+    content: " ";
+  position: absolute;
+  top: 50%;
+  left: 100%; /* To the right of the tooltip */
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent white;
+  }
+
+  @keyframes tool-tip-fade{
+      from{
+          opacity: 0;
+      }
+      to{
+          opacity: 1;
+      }
   }
 
 
