@@ -19,11 +19,11 @@ export class SkillsProjectsComponent implements OnInit {
       'profiency': 80
     },
     {
-      'skill': 'Typescript',
+      'skill': 'Javascript/Typescript',
       'profiency': 70
     },
     {
-      'skill': 'Spring',
+      'skill': 'Spring Framework',
       'profiency': 70
     }, {
       'skill': 'Python',
@@ -35,13 +35,13 @@ export class SkillsProjectsComponent implements OnInit {
     },
     {
       'skill': 'Flutter',
-      'profiency': 70
+      'profiency': 80
     }, {
       'skill': 'Dart',
       'profiency': 70
     }, {
       'skill': 'Hibernate',
-      'profiency': 70
+      'profiency': 80
     },
     {
       'skill': 'HTML',
@@ -50,7 +50,7 @@ export class SkillsProjectsComponent implements OnInit {
     {
       'skill': 'CSS',
       'profiency': 70
-    }
+    },
   ];
   public repos;
   constructor(public http: HttpClient) { }

@@ -8,9 +8,9 @@ import { AppService } from './app.service';
 })
 export class AppComponent implements AfterViewInit {
   public bullets = {
-    '0': '',
-    '1': '',
-    // '2': '',
+    '0': 'Landing page',
+    '1': 'Skills',
+    '2': 'Contact me',
     // '3': ''
   }
   public currentIndex = 0;
@@ -59,7 +59,7 @@ export class AppComponent implements AfterViewInit {
           console.log("swiped up");
 
           if (this.appService.isElementMounted) {
-            if (this.currentIndex < 1) {
+            if (this.currentIndex < 2) {
 
               this.currentIndex = this.currentIndex + 1;
               this.appService.waitForAnimation();
@@ -92,7 +92,7 @@ export class AppComponent implements AfterViewInit {
   @HostListener('mousewheel', ['$event']) getScrollHeight(event) {
 
     if (this.appService.isElementMounted) {
-      if (this.currentIndex < 1 && event.deltaY > 0) {
+      if (this.currentIndex < 2 && event.deltaY > 0) {
 
         this.currentIndex = this.currentIndex + 1;
         this.appService.waitForAnimation();
@@ -118,5 +118,22 @@ export class AppComponent implements AfterViewInit {
   onBulletClicked(key: string) {
     this.currentIndex = +key;
     this.appService.waitForAnimation();
+  }
+
+  showTooltip(toolId){
+    console.log('showing toop');
+    let tooltip = document.getElementById(toolId);
+
+    
+    tooltip.style.transform = 'scale3d(1,1,1)';
+    tooltip.style.opacity = '1';
+  }
+
+  hideTooltip(toolId){
+    console.log('hide toop');
+    let tooltip = document.getElementById(toolId);
+
+    tooltip.style.opacity = '0';
+    tooltip.style.transform = 'scale3d(0,0,0)';
   }
 }

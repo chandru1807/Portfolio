@@ -6,10 +6,10 @@
   display: inline-block;
 }
 .welcome{
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Raleway';
   color: white;
   opacity: 0;
-  font-size: calc(6px + 1vw);
+  font-size: calc(6px + 0.8vw);
   animation: slideFromBottom 1s 3.0s forwards ease-in-out;
 }
 
@@ -20,7 +20,7 @@
 
 @media only screen and (max-width: 599px){
   .text-font{
-    font-size: 15px;
+    font-size: 19px;
     font-weight: 600;
     letter-spacing: 1px;
   }

@@ -1,4 +1,8 @@
 
+.row{
+    margin: 0;
+}
+
 .add-skills{
     display: flex;
     justify-content: center;
@@ -29,7 +33,7 @@ svg{
     }
 
     50%{
-        transform: perspective(200px) rotateY(-60deg);
+        transform: perspective(200px) rotateY(-45deg);
     }
     to{
         transform: perspective(100px);
@@ -39,26 +43,26 @@ svg{
 .capability-text-wrapper{
     color: white;  
     opacity: 0;
+    margin-top: 10px;
 }
 
 .cap-header{
     font-weight: bold;
-    font-size: calc(6px + 1vw);
+    font-size: calc(8px + 0.8vw);
     font-family: cursive;
     text-align: center;
 }
 
 .cap-text{
-    font-size: calc(2px + 1vw);
+    font-size: calc(4px + 0.8vw);
     text-align: center;
+    font-family: 'Raleway';
 }
 
 .skills-header{
     color: white;
     font-weight: bolder;
     font-size: calc(7px + 1vw);
-    /* line-height: calc(7px + 1vw);
-    padding-bottom: 5px; */
     border-bottom: 2px white solid;
     letter-spacing: 4px;
     font-family: cursive;
@@ -66,12 +70,13 @@ svg{
 }
 
 .skill-text{
+    text-align: center;
     color: white; 
     font-weight: bold; 
-    font-size: calc(4px + 1vw);
-    font-family: cursive;
+    font-size: calc(7px + 0.8vw);
+    font-family: 'Raleway';
     animation: skill-text-fade-in 0.75s ease;
-    text-align: center;
+   
 }
 
 @keyframes skill-text-fade-in{
@@ -129,7 +134,7 @@ svg{
 .add-skills-wrapper{
     height: 25%;
     display: flex;
-    align-items: center; 
+    align-items: flex-start; 
     justify-content: center;
 }
 
@@ -147,5 +152,9 @@ svg{
     }
     .skills-wrapper{
         height: 80%;
+    }
+
+    .cap-text{
+        display: none;
     }
 }

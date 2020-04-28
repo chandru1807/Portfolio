@@ -1,9 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
 /* body{
     
     
     background-color: #141414 !important;
 } */
+
 html, body, .wrapper{
     height: 100%;
 }
