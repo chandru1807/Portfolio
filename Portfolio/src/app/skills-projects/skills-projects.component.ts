@@ -57,19 +57,10 @@ export class SkillsProjectsComponent implements OnInit {
 
   ngOnInit() {
     let url = `https://api.github.com/users/chandru1807/repos`;
-    // this.http.get('https://api.github.com/users/chandru1807').subscribe(data => {
-    //   console.log(data);
 
-    // });
-    // setTimeout(() => {
-      
-    // }
-    // }, 0);
-    // this.http.get(url).subscribe(repos => {
     setTimeout(() => {
       let svgTextDelay = 1;
       let wrappers = document.querySelectorAll(".capability-text-wrapper");
-      console.log(wrappers);
       wrappers.forEach(wrap => {
         let el = wrap as HTMLElement;
 
@@ -86,23 +77,6 @@ export class SkillsProjectsComponent implements OnInit {
       delay += 0.02;
     }
     }, 0);
-
-    //   console.log(repos);
-    //   this.repos = repos;
-    //   setTimeout(() => {
-    //     delay = 0;
-    //     for(let repo of this.repos){
-    //       let r = document.getElementById(repo.id);
-    //       r.style.opacity = '1';
-    //       r.style.transition = 'opacity 2s ease '+delay+'s'
-    //       delay += 0.1;
-    //     }
-    //   }, 0);
-    // })
-  }
-
-  routeIt(url) {
-    window.open(url, '_blank');
   }
 
 }
