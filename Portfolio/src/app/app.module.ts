@@ -9,6 +9,7 @@ import { AppService } from './app.service';
 import { CardComponent } from './card/card.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { SkillsProjectsComponent } from './skills-projects/skills-projects.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { SkillsProjectsComponent } from './skills-projects/skills-projects.compo
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [AppService],
   bootstrap: [AppComponent],
