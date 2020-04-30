@@ -81,9 +81,11 @@ img {
 
 }
 
+
+
 @keyframes img-animation {
   from {
-    transform: translateX(-300px);
+    transform: translateX(-250px);
     opacity: 0;
   }
 
@@ -101,13 +103,39 @@ img {
 @keyframes text-animation {
   from {
     opacity: 0;
-    transform: translateX(300px);
+    transform: translateX(250px);
   }
 
   to {
     opacity: 1;
     transform: translateX(0px);
   }
+}
+
+@media only screen and (max-width: 770px){
+  @keyframes img-animation {
+    from {
+      transform: translateX(-100px);
+      opacity: 0;
+    }
+  
+    to {
+      transform: translateX(0px);
+      opacity: 1;
+    }
+  }
+  @keyframes text-animation {
+    from {
+      opacity: 0;
+      transform: translateX(100px);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+  
 }
 
 a{
