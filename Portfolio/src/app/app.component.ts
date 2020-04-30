@@ -10,8 +10,8 @@ export class AppComponent implements AfterViewInit {
   public bullets = {
     '0': 'Landing page',
     '1': 'Skills',
-    '2': 'Contact me',
-    // '3': ''
+    '2': 'Projects',
+    '3': 'Contact me'
   }
   public currentIndex = 0;
 
@@ -59,7 +59,7 @@ export class AppComponent implements AfterViewInit {
           console.log("swiped up");
 
           if (this.appService.isElementMounted) {
-            if (this.currentIndex < 2) {
+            if (this.currentIndex < 3) {
 
               this.currentIndex = this.currentIndex + 1;
               this.appService.waitForAnimation();
@@ -92,7 +92,7 @@ export class AppComponent implements AfterViewInit {
   @HostListener('mousewheel', ['$event']) getScrollHeight(event) {
 
     if (this.appService.isElementMounted) {
-      if (this.currentIndex < 2 && event.deltaY > 0) {
+      if (this.currentIndex < 3 && event.deltaY > 0) {
 
         this.currentIndex = this.currentIndex + 1;
         this.appService.waitForAnimation();

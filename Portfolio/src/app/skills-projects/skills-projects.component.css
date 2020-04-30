@@ -161,3 +161,31 @@ svg{
         display: none;
     }
 }
+
+@media all and (max-height:500px) and (orientation:landscape) {
+    .skill-text{
+        font-size: calc(7px + 1vh);
+    }
+    .cap-text{
+        display: none;
+    }
+    .skill-profiency{
+        font-size: calc(5px + 1vh);
+    }
+    .skill-bar-wrapper{
+        height: calc(7px + 1vh);
+    }
+    .cap-header{
+        font-size: calc(6px + 1vh);
+    }
+
+    .svg-wrapper{
+        height: calc(40px + 3vh);
+        width: calc(40px + 3vh);
+    }
+
+    svg{
+        height: calc(15px + 3vh);
+        width: calc(15px + 3vh);
+    }
+  }

@@ -1,0 +1,11 @@
+.projects-header {
+
+  color: white;
+  font-weight: bolder;
+  font-size: calc(7px + 1vw);
+  border-bottom: 2px white solid;
+  letter-spacing: 4px;
+  font-family: cursive;
+  height: calc(16px + 1vw);
+
+}
