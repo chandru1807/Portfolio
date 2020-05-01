@@ -25,6 +25,7 @@ svg{
     align-items: center;
     align-self: center;
     animation: svg-animation 1s ease-out;
+    border: 2px solid #d36e3e;
 }
 
 @keyframes svg-animation{
@@ -97,6 +98,7 @@ svg{
     background-color: rgba(114, 217, 212, 0.3);
     animation: skill-bar-fade-in 0.75s ease;
     padding: 0;
+    border: 1px solid #d36e3e;
 }
 
 @keyframes skill-bar-fade-in{

@@ -14,9 +14,56 @@ export class AppComponent implements AfterViewInit {
     '3': 'Contact me'
   }
   public currentIndex = 0;
+  scrollOffset = null;
+  canScroll = true;
 
-  constructor(public appService: AppService) { }
+  constructor(public appService: AppService) {
+    // window.addEventListener('scroll', function(e) {
+
+    //   console.log('scrolled',e);
+
+    //   });
+  }
   ngAfterViewInit(): void {
+    setTimeout(() => {
+      let element = document.getElementById('all-wrapper');
+      element.addEventListener('pointermove', e => {
+
+        if (this.canScroll) {
+          if (e.pointerType === 'touch') {
+            console.log(e);
+            
+            if (!this.scrollOffset) {
+              this.scrollOffset = e.offsetY;
+            }
+            else {
+              if (e.offsetY > this.scrollOffset) {
+                if (this.currentIndex > 0) {
+
+                  this.currentIndex = this.currentIndex - 1;
+                  this.appService.waitForAnimation();
+                }
+              }
+              else if(e.offsetY < this.scrollOffset) {
+                if (this.currentIndex < 3) {
+
+                  this.currentIndex = this.currentIndex + 1;
+                  //this.appService.waitForAnimation();
+                }
+              }
+
+              this.canScroll = false;
+              setTimeout(() => {
+                this.canScroll = true;
+                this.scrollOffset = null;
+              }, 1000);
+            }
+          }
+        }
+
+
+      });
+    }, 1000);
 
 
     // Swipe Up / Down / Left / Right
@@ -24,11 +71,15 @@ export class AppComponent implements AfterViewInit {
     var initialY = null;
 
     let startTouch = (e) => {
+      console.log('start touch');
+
       initialX = e.touches[0].clientX;
       initialY = e.touches[0].clientY;
     };
 
     let moveTouch = (e) => {
+      console.log(moveTouch);
+
       if (initialX === null) {
         return;
       }
@@ -90,6 +141,7 @@ export class AppComponent implements AfterViewInit {
 
 
   @HostListener('mousewheel', ['$event']) getScrollHeight(event) {
+    console.log('in here', event);
 
     if (this.appService.isElementMounted) {
       if (this.currentIndex < 3 && event.deltaY > 0) {
@@ -120,16 +172,16 @@ export class AppComponent implements AfterViewInit {
     this.appService.waitForAnimation();
   }
 
-  showTooltip(toolId){
+  showTooltip(toolId) {
     console.log('showing toop');
     let tooltip = document.getElementById(toolId);
 
-    
+
     tooltip.style.transform = 'scale3d(1,1,1)';
     tooltip.style.opacity = '1';
   }
 
-  hideTooltip(toolId){
+  hideTooltip(toolId) {
     console.log('hide toop');
     let tooltip = document.getElementById(toolId);
 
