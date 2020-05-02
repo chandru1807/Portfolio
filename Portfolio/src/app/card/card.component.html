@@ -1,16 +1,8 @@
-<div class="card text-white bg-dark mb-3">
+<div class="card text-white bg-dark mb-3 card-wrapper">
   <div class="row no-gutters">
-    <ng-container *ngIf="imgInput">
-      <div class="col-md-4" style="text-align: center;">
-        <img class="{{imgInput.css}}" src="{{imgInput.url}}" alt="Card image">
-      </div>
-    </ng-container>
 
-    <div class="col-md-8">
+    <div class="col-12">
       <div class="card-body">
-        <h4 class="card-title">
-          <ng-content select="card-title"></ng-content>
-        </h4>
         <div class="card-text">
           <ng-content select="card-body"></ng-content>
         </div>

@@ -29,7 +29,7 @@ export class AppComponent implements AfterViewInit {
       let element = document.getElementById('all-wrapper');
       element.addEventListener('pointermove', e => {
 
-        if (this.canScroll) {
+        if (this.canScroll && screen.width > 900) {
           if (e.pointerType === 'touch') {
             console.log(e);
             
@@ -142,7 +142,8 @@ export class AppComponent implements AfterViewInit {
 
   @HostListener('mousewheel', ['$event']) getScrollHeight(event) {
     console.log('in here', event);
-
+    console.log(screen.width);
+    
     if (this.appService.isElementMounted) {
       if (this.currentIndex < 3 && event.deltaY > 0) {
 

@@ -13,6 +13,6 @@ export class AppService {
     this.isElementMounted = false;
     setTimeout(() => {
       this.isElementMounted = true;
-    }, 1000);
+    }, 1500);
   }
 }
