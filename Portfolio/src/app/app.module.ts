@@ -1,16 +1,17 @@
+import { HttpClientModule } from '@angular/common/http';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AboutMeComponent } from './about-me/about-me.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LandingPageComponent } from './landing-page/landing-page.component';
-import { HttpClientModule } from '@angular/common/http';
 import { AppService } from './app.service';
 import { CardComponent } from './card/card.component';
-import { AboutMeComponent } from './about-me/about-me.component';
-import { SkillsProjectsComponent } from './skills-projects/skills-projects.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { SkillsProjectsComponent } from './skills-projects/skills-projects.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -19,13 +20,14 @@ import { ProjectsComponent } from './projects/projects.component';
     CardComponent,
     AboutMeComponent,
     SkillsProjectsComponent,
-    ProjectsComponent
+    ProjectsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ReactiveFormsModule
   ],
   providers: [AppService],
   bootstrap: [AppComponent],

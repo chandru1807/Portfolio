@@ -4,45 +4,98 @@
       About me
     </div>
   </div>
-  <div style="height: 40%;">
+  <div style="height: 35%;display: flex;">
     <div class="row" style="justify-content: center; align-items: center;">
       <div class="col-md-3 about-me-img-wrapper"> <img src="../../assets/images/my-img.jpeg" alt="Not found"></div>
-      <div class="col-md-6 about-me-txt-wrapper" style="color: white;font-family: 'Raleway'; font-size: calc(6px + 0.8vw);">
+      <div class="col-md-6 about-me-txt-wrapper"
+        style="color: white;font-family: 'Raleway'; font-size: calc(6px + 0.8vw);">
         <p style="font-size: calc(12px + 0.8vw);font-family: 'Raleway'; font-weight: bold;">Who's this guy?</p>
-        <p>I'm a Full-Stack Developer for <a href="https://www.infosys.com/" target="_blank"><span class="link-border">Infosys Ltd.</span></a> working out
+        <p>I'm a Full-Stack Developer for <a href="https://www.infosys.com/" target="_blank"><span
+              class="link-border">Infosys Ltd.</span></a> working out
           of Bangalore, India. I have serious passion for designing and developing End to End web applications that are
           fast, fluid and responsive.</p>
         <p>
-          Also, take a look at my <a download="Resume-Chandru-R" href="../../assets/resume/Resume-Chandru-R.pdf"><span class="link-border">resume</span></a>.
+          Also, take a look at my <a download="Resume-Chandru-R" href="../../assets/resume/Resume-Chandru-R.pdf"><span
+              class="link-border">resume</span></a>.
         </p>
       </div>
     </div>
   </div>
-  <div style="height: 30%;">
+  <div class="question-wrapper">
+    <div class="question-text">
+      Have a question or want to work together?
+    </div>
+    <div class="row question-card">
+      
+      <div class="col-md-9">
+        <card>
+          <card-body>
+            <form [formGroup]="emailForm">
 
+              <div class="row" style="justify-content: space-evenly; align-items: center;position: relative;">
+                <div *ngIf="isLoading" class="load-wrapper">
+                  <fa-icon *ngIf="isLoading === 'spinner'" [icon]="spinner" [spin]="true" [pulse]="true" [styles]="{'color': '#d36e3e'}"></fa-icon>
+                  <fa-icon *ngIf="isLoading === 'success'" [icon]="success" [styles]="{'color': '#4eef8f'}"></fa-icon>
+                  <fa-icon *ngIf="isLoading === 'failure'" [icon]="failure" [styles]="{'color': '#ea1f1f'}"></fa-icon>
+                </div>
+                <input type="text" [ngClass]="{'error-border': (triedToSubmit) && getFromNameControl?.errors}" placeholder="Name" formControlName="from_name" required>
+
+                <input type="email" [ngClass]="{'error-border': (triedToSubmit) && getFromEmailControl?.errors}" placeholder="Enter Email" formControlName="from_email" required>
+
+                <textarea [ngClass]="{'error-border': (triedToSubmit) && getMessageControl?.errors}" placeholder="Your message" formControlName="message_html" required></textarea>
+              </div>
+
+            </form>
+          </card-body>
+        </card>
+        <div>
+          <span *ngIf="errMsg" class="error-msg">
+            {{errMsg}}
+          </span>
+          <span>
+            <button (click)="sendMail()">Submit</button>
+          </span>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="social-media-wrapper">
-    <div class="row" style="justify-content: center; align-items: center;color: white;font-family: 'Raleway';font-size: calc(6px + 0.8vw);">
-      <p>Feel free to drop an email to <a href="mailto:chandruuramamurthyy@gmail.com"><span class="link-border">chandruuramamurthyy@gmail.com</span></a>, or get in touch through below forums</p>
+    <div class="row"
+      style="justify-content: center; align-items: center;color: white;font-family: 'Raleway';font-size: calc(6px + 0.8vw);">
+      <p>Feel free to drop an email to <a href="mailto:chandruuramamurthyy@gmail.com"><span
+            class="link-border">chandruuramamurthyy@gmail.com</span></a>, or get in touch through below forums</p>
     </div>
     <div class="row" style="font-family: 'Raleway';font-size: calc(6px + 0.8vw); justify-content: center;">
       <div class="col-3 col-sm-2 link-wrapper">
-        <a href="https://github.com/chandru1807" target="_blank"><span class="link-border svg-flex"><fa-icon [icon]="brandIcons?.gitHub" [styles]="{'stroke': 'red','color': '#24aac0'}"></fa-icon><span class="brand-name">Github</span></span></a>
+        <a href="https://github.com/chandru1807" target="_blank"><span class="link-border svg-flex">
+            <fa-icon [icon]="brandIcons?.gitHub" [styles]="{'stroke': 'red','color': '#24aac0'}"></fa-icon><span
+              class="brand-name">Github</span>
+          </span></a>
       </div>
       <div class="col-3 col-sm-2 link-wrapper">
-        <a href="https://www.linkedin.com/in/chandru-ramamoorthy-b39165177/" target="_blank"><span class="link-border svg-flex"><fa-icon [icon]="brandIcons?.linkedIn" [styles]="{'stroke': 'red','color': '#24aac0'}"></fa-icon><span class="brand-name">LinkedIn</span></span></a>
-  
-        
+        <a href="https://www.linkedin.com/in/chandru-ramamoorthy-b39165177/" target="_blank"><span
+            class="link-border svg-flex">
+            <fa-icon [icon]="brandIcons?.linkedIn" [styles]="{'stroke': 'red','color': '#24aac0'}"></fa-icon><span
+              class="brand-name">LinkedIn</span>
+          </span></a>
+
+
       </div>
       <div class="col-3 col-sm-2 link-wrapper">
-        <a href="https://www.facebook.com/chandru.chan.90" target="_blank"><span class="link-border svg-flex"><fa-icon [icon]="brandIcons?.facebook" [styles]="{'stroke': 'red','color': '#24aac0'}"></fa-icon><span class="brand-name">Facebook</span></span></a>
-  
-        
+        <a href="https://www.facebook.com/chandru.chan.90" target="_blank"><span class="link-border svg-flex">
+            <fa-icon [icon]="brandIcons?.facebook" [styles]="{'stroke': 'red','color': '#24aac0'}"></fa-icon><span
+              class="brand-name">Facebook</span>
+          </span></a>
+
+
       </div>
       <div class="col-3 col-sm-2 link-wrapper">
-        <a href="https://www.instagram.com/chandruu1807/" target="_blank"><span class="link-border svg-flex"> <fa-icon [icon]="brandIcons?.instagram" [styles]="{'stroke': 'red','color': '#24aac0'}"></fa-icon><span class="brand-name">Instagram</span></span></a>
-  
-       
+        <a href="https://www.instagram.com/chandruu1807/" target="_blank"><span class="link-border svg-flex">
+            <fa-icon [icon]="brandIcons?.instagram" [styles]="{'stroke': 'red','color': '#24aac0'}"></fa-icon><span
+              class="brand-name">Instagram</span>
+          </span></a>
+
+
       </div>
     </div>
   </div>
