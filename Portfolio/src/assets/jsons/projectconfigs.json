@@ -1,0 +1,21 @@
+{
+    "gitProjects":{
+        "backupImgUrl":"/assets/images/vs-code.png",
+        "Covid-19-Tracker":{
+            "techStack":"React.js, Javascript",
+            "img":"/assets/images/covid-19-tracker.png"
+        },
+        "MusicStreamApp":{
+            "techStack":"Flutter, Dart",
+            "img":null
+        },
+        "Split-It":{
+            "techStack":"Flutter, Dart",
+            "img":null
+        },
+        "Praum-Dribbble-UI":{
+            "techStack":"Angular, Typescript",
+            "img":null
+        }
+    }
+}

@@ -1,10 +1,68 @@
-<div style="height: 100%;">
+<div style="height: 100%;margin: 0 10%;">
   <div class="row" style="justify-content: center;height: 10%;">
     <div class="projects-header">
       Projects
     </div>
   </div>
-  <div class="row" style="height: 90%; justify-content: center; align-items: center;">
-    <p style="color: white;font-weight: bold;">WORK IN PROGRESS :)</p>
+  <div class="row project-intro">
+    <div class="col-12" style="text-align: center;">
+      <p>Professionally, I have been involved in Designing and Developing Web Applications for over 2 years. Below are
+        some
+        of my projects that I had developed during my free time. Check them out :)</p>
+    </div>
+  </div>
+  <div class="row" style="height: 10%;color:white; justify-content: center;align-items: center;">
+
+    <div class="row col-9" style="position: relative;padding: 0;">
+      <div id="filterBack" class="filter-highlight">
+
+      </div>
+      <div (click)="handleFilter('All')" class="col-3 filter-text">
+        All
+      </div>
+      <div (click)="handleFilter('Angular')" class="col-3 filter-text">
+        Angular
+      </div>
+      <div (click)="handleFilter('Flutter')" class="col-3 filter-text">
+        Flutter
+      </div>
+      <div (click)="handleFilter('React')" class="col-3 filter-text">
+        React
+      </div>
+    </div>
+
+  </div>
+  <div class="row project-cards-wrapper">
+
+    <ng-container *ngIf="projects">
+      <ng-container *ngFor="let pro of projects; let i = index">
+        <ng-container *ngIf="projectconfigs[pro.name]">
+          <div class="col-sm-6 col-md-4 proj-cards">
+
+            <div class="proj-cards-inner" [ngStyle]="{'background-image': getImgUrl(pro.name)}"
+              (mouseenter)="showSheet(pro.name+'-sheet'+i)" (mouseleave)="hideSheet(pro.name+'-sheet'+i)">
+              <div class="filter"></div>
+              <div [id]="pro.name+'-sheet'+i" class="hover-sheet">
+                <div style="font-weight: bold;">{{pro.name}}</div>
+                <div style="color: gray; font-size: calc(6px + 0.8vw);">
+                  {{projectconfigs[pro.name] ? projectconfigs[pro.name]['techStack'] : pro.language}}</div>
+                <div class="row"
+                  style="justify-content: center; align-items: center;width: 90%;font-size: calc(6px + 0.8vw);">
+                  <div *ngIf="pro.homepage" class="col-6" style="text-align: center;">
+                    <a href="{{pro.homepage}}" target="_blank"><span class="link-border">Live Site</span></a>
+                  </div>
+                  <div class="col-6" style="text-align: center;">
+                    <a [href]="pro['html_url']" target="_blank"><span class="link-border">Github</span></a>
+                  </div>
+                </div>
+              </div>
+              <div class="card-text">{{pro.name}}</div>
+            </div>
+          </div>
+        </ng-container>
+      </ng-container>
+
+    </ng-container>
+
   </div>
 </div>

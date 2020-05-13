@@ -25,6 +25,7 @@ export class AppComponent implements AfterViewInit {
     //   });
   }
   ngAfterViewInit(): void {
+    this.appService.getGitProjects();
     setTimeout(() => {
       let element = document.getElementById('all-wrapper');
       element.addEventListener('pointermove', e => {
