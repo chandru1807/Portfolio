@@ -1,11 +1,9 @@
-
-
-
 .typewriter {
   font-family: cursive;
   display: inline-block;
 }
-.welcome{
+
+.welcome {
   font-family: 'Raleway';
   color: white;
   opacity: 0;
@@ -13,59 +11,71 @@
   animation: slideFromBottom 1s 3.0s forwards ease-in-out;
 }
 
-.landing-page{
+.landing-page {
   margin-top: 45vh;
   animation: slideIn 1s;
   text-align: center;
 }
 
-.text-font{
+.text-font {
   font-size: calc(12px + 0.8vw);
   font-weight: bold;
 }
 
-@keyframes slideFromBottom{
-  from{opacity: 0;}
-  to{opacity: 1;}
+@keyframes slideFromBottom {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
-@keyframes slideIn{
-  from{opacity: 0;margin-top: 0vh;}
-  to{opacity: 1;margin-top: 45vh;}
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    margin-top: 0vh;
+  }
+
+  to {
+    opacity: 1;
+    margin-top: 45vh;
+  }
 }
 
-@media only screen and (max-width: 375px){
-  .text-font{
+@media only screen and (max-width: 375px) {
+  .text-font {
     font-size: 12px;
     /* letter-spacing: 0.5px; */
   }
 
 }
 
-@media only screen and (min-width: 376px) and (max-width: 599px){
-  .text-font{
+@media only screen and (min-width: 376px) and (max-width: 599px) {
+  .text-font {
     font-size: 16px;
     /* letter-spacing: 0.5px; */
   }
 
 }
 
-@media only screen and (min-width: 600px){
-  .text-font{
+@media only screen and (min-width: 600px) {
+  .text-font {
     font-size: 20px;
     letter-spacing: 1px;
   }
 }
 
-@media only screen and (min-width: 900px){
-  .text-font{
+@media only screen and (min-width: 900px) {
+  .text-font {
     font-size: 25px;
     letter-spacing: 1.5px;
   }
 }
 
-@media only screen and (min-width: 1200px){
-  .text-font{
+@media only screen and (min-width: 1200px) {
+  .text-font {
     font-size: 30px;
     letter-spacing: 2px;
   }
@@ -74,12 +84,12 @@
 
 .typewriter-text {
   display: inline-block;
- color: white;
+  color: white;
   overflow: hidden;
-  
- animation: typing 3.1s cubic-bezier(0.5, -0.55, 0.6, 1.5), blink .75s step-end infinite;
+
+  animation: typing 3.1s cubic-bezier(0.5, -0.55, 0.6, 1.5), blink .75s step-end infinite;
   white-space: nowrap;
-  
+
   border-right: 4px solid #d36e3e;
   box-sizing: border-box;
 }
@@ -87,20 +97,23 @@
 
 
 @keyframes typing {
-  from { 
-      width: 0% 
+  from {
+    width: 0%
   }
-  to { 
-      width: 100% 
+
+  to {
+    width: 100%
   }
 }
 
 @keyframes blink {
-  from, to { 
-      border-color: transparent 
+
+  from,
+  to {
+    border-color: transparent
   }
-  50% { 
-      border-color: #d36e3e; 
+
+  50% {
+    border-color: #d36e3e;
   }
 }
-
