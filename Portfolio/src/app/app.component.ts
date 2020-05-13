@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit, AfterViewInit } from '@angular/core';
+import { AfterViewInit, Component, HostListener } from '@angular/core';
 import { AppService } from './app.service';
 
 @Component({
@@ -18,11 +18,6 @@ export class AppComponent implements AfterViewInit {
   canScroll = true;
 
   constructor(public appService: AppService) {
-    // window.addEventListener('scroll', function(e) {
-
-    //   console.log('scrolled',e);
-
-    //   });
   }
   ngAfterViewInit(): void {
     this.appService.getGitProjects();
@@ -32,8 +27,6 @@ export class AppComponent implements AfterViewInit {
 
         if (this.canScroll && screen.width > 900) {
           if (e.pointerType === 'touch') {
-            console.log(e);
-            
             if (!this.scrollOffset) {
               this.scrollOffset = e.offsetY;
             }
@@ -45,11 +38,10 @@ export class AppComponent implements AfterViewInit {
                   this.appService.waitForAnimation();
                 }
               }
-              else if(e.offsetY < this.scrollOffset) {
+              else if (e.offsetY < this.scrollOffset) {
                 if (this.currentIndex < 3) {
 
                   this.currentIndex = this.currentIndex + 1;
-                  //this.appService.waitForAnimation();
                 }
               }
 
@@ -72,14 +64,12 @@ export class AppComponent implements AfterViewInit {
     var initialY = null;
 
     let startTouch = (e) => {
-      console.log('start touch');
 
       initialX = e.touches[0].clientX;
       initialY = e.touches[0].clientY;
     };
 
     let moveTouch = (e) => {
-      console.log(moveTouch);
 
       if (initialX === null) {
         return;
@@ -99,16 +89,13 @@ export class AppComponent implements AfterViewInit {
         // sliding horizontally
         if (diffX > 0) {
           // swiped left
-          console.log("swiped left");
         } else {
           // swiped right
-          console.log("swiped right");
         }
       } else {
         // sliding vertically
         if (diffY > 0) {
           // swiped up
-          console.log("swiped up");
 
           if (this.appService.isElementMounted) {
             if (this.currentIndex < 3) {
@@ -126,7 +113,6 @@ export class AppComponent implements AfterViewInit {
               this.appService.waitForAnimation();
             }
           }
-          console.log("swiped down");
         }
       }
 
@@ -142,9 +128,7 @@ export class AppComponent implements AfterViewInit {
 
 
   @HostListener('mousewheel', ['$event']) getScrollHeight(event) {
-    console.log('in here', event);
-    console.log(screen.width);
-    
+
     if (this.appService.isElementMounted) {
       if (this.currentIndex < 3 && event.deltaY > 0) {
 
@@ -175,7 +159,6 @@ export class AppComponent implements AfterViewInit {
   }
 
   showTooltip(toolId) {
-    console.log('showing toop');
     let tooltip = document.getElementById(toolId);
 
 
@@ -184,7 +167,6 @@ export class AppComponent implements AfterViewInit {
   }
 
   hideTooltip(toolId) {
-    console.log('hide toop');
     let tooltip = document.getElementById(toolId);
 
     tooltip.style.opacity = '0';

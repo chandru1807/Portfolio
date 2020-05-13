@@ -1,5 +1,5 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
 
 
 @Component({
@@ -66,16 +66,16 @@ export class SkillsProjectsComponent implements OnInit {
 
         el.style.opacity = '1';
         el.style.transition = `opacity 1s ease ${svgTextDelay}s`;
-        svgTextDelay+=0.2; 
+        svgTextDelay += 0.2;
       });
 
       let delay = 0.75;
-    for(let s of this.skills){
-      let skill = document.getElementById(s.skill);
-      skill.style.width = s.profiency+'%';
-      skill.style.transition = 'width 1s cubic-bezier(0.5, -0.55, 0.6, 1.5) '+delay+'s'
-      delay += 0.02;
-    }
+      for (let s of this.skills) {
+        let skill = document.getElementById(s.skill);
+        skill.style.width = s.profiency + '%';
+        skill.style.transition = 'width 1s cubic-bezier(0.5, -0.55, 0.6, 1.5) ' + delay + 's'
+        delay += 0.02;
+      }
     }, 0);
   }
 

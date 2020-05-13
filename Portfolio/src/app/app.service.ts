@@ -27,11 +27,11 @@ export class AppService {
     this.http.get(githuburl).subscribe(projects => {
       let projArr = projects as Array<any>;
       console.log(projects);
-      
+
       this.gitProjects.next(projArr);
     });
 
-    
+
   }
 
   getProjectConfigs() {

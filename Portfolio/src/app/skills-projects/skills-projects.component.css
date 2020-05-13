@@ -1,191 +1,199 @@
-
-.row{
-    margin: 0;
+.row {
+  margin: 0;
 }
 
-.add-skills{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+.add-skills {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
-svg{
-    height: calc(15px + 3vw);
-    width: calc(15px + 3vw);
-    fill: white;  
+svg {
+  height: calc(15px + 3vw);
+  width: calc(15px + 3vw);
+  fill: white;
 }
 
-.svg-wrapper{
-    height: calc(40px + 3vw);
-    width: calc(40px + 3vw);
-    border-radius: 50%;
-    background-color: #24aac0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-self: center;
-    animation: svg-animation 1s ease-out;
+.svg-wrapper {
+  height: calc(40px + 3vw);
+  width: calc(40px + 3vw);
+  border-radius: 50%;
+  background-color: #24aac0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  animation: svg-animation 1s ease-out;
 }
 
-@keyframes svg-animation{
-    from{
-        transform: perspective(400px) rotateY(90deg);
-    }
+@keyframes svg-animation {
+  from {
+    transform: perspective(400px) rotateY(90deg);
+  }
 
-    50%{
-        transform: perspective(200px) rotateY(-45deg);
-    }
-    to{
-        transform: perspective(100px);
-    }
+  50% {
+    transform: perspective(200px) rotateY(-45deg);
+  }
+
+  to {
+    transform: perspective(100px);
+  }
 }
 
-.capability-text-wrapper{
-    color: white;  
+.capability-text-wrapper {
+  color: white;
+  opacity: 0;
+  margin-top: 10px;
+}
+
+.cap-header {
+  font-weight: bold;
+  font-size: calc(8px + 0.8vw);
+  font-family: cursive;
+  text-align: center;
+}
+
+.cap-text {
+  font-size: calc(4px + 0.8vw);
+  text-align: center;
+  font-family: 'Raleway';
+}
+
+.skills-header {
+  color: white;
+  font-weight: bolder;
+  font-size: calc(7px + 1vw);
+  border-bottom: 2px white solid;
+  letter-spacing: 4px;
+  font-family: cursive;
+  height: calc(16px + 1vw);
+}
+
+.skill-text {
+  text-align: center;
+  display: flex;
+  align-items: center;
+
+  color: white;
+  font-weight: bold;
+  font-size: calc(7px + 0.8vw);
+  font-family: 'Raleway';
+  animation: skill-text-fade-in 0.75s ease;
+
+}
+
+@keyframes skill-text-fade-in {
+  from {
+    transform: translateX(-300px);
     opacity: 0;
-    margin-top: 10px;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
-.cap-header{
-    font-weight: bold;
-    font-size: calc(8px + 0.8vw);
-    font-family: cursive;
-    text-align: center;
+.skill-bar-wrapper {
+  background-color: rgba(114, 217, 212, 0.3);
+  animation: skill-bar-fade-in 0.75s ease;
+  padding: 0;
 }
 
-.cap-text{
-    font-size: calc(4px + 0.8vw);
-    text-align: center;
-    font-family: 'Raleway';
-}
-
-.skills-header{
-    color: white;
-    font-weight: bolder;
-    font-size: calc(7px + 1vw);
-    border-bottom: 2px white solid;
-    letter-spacing: 4px;
-    font-family: cursive;
-    height: calc(16px + 1vw);
-}
-
-.skill-text{
-    text-align: center;
-    display: flex;
-    align-items: center;
-    
-    color: white; 
-    font-weight: bold; 
-    font-size: calc(7px + 0.8vw);
-    font-family: 'Raleway';
-    animation: skill-text-fade-in 0.75s ease;
-   
-}
-
-@keyframes skill-text-fade-in{
-    from{
-        transform: translateX(-300px);
-        opacity: 0;
-    }
-    to{
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-.skill-bar-wrapper{
-    background-color: rgba(114, 217, 212, 0.3);
-    animation: skill-bar-fade-in 0.75s ease;
-    padding: 0;
-}
-
-@keyframes skill-bar-fade-in{
-    from{
-        transform: translateX(300px);
-        opacity: 0;
-    }
-    to{
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-.skill-bar{
-    width: 0%; 
-    background-color: #24aac0; 
-    height: 100%; 
-    opacity: 1; 
-    justify-content: center;
-    margin: 0;
-}
-
-.skill-profiency{
-    color: white;
+@keyframes skill-bar-fade-in {
+  from {
+    transform: translateX(300px);
     opacity: 0;
-    animation: skill-prof-fade-in 0.2s ease 2s forwards;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
-@keyframes skill-prof-fade-in{
-    from{
-        opacity: 0;
-    }
-    to{
-        opacity: 1;
-    }
+.skill-bar {
+  width: 0%;
+  background-color: #24aac0;
+  height: 100%;
+  opacity: 1;
+  justify-content: center;
+  margin: 0;
 }
 
-.add-skills-wrapper{
-    height: 25%;
-    display: flex;
-    align-items: flex-start; 
-    justify-content: center;
+.skill-profiency {
+  color: white;
+  opacity: 0;
+  animation: skill-prof-fade-in 0.2s ease 2s forwards;
 }
 
-.skills-wrapper{
-    padding: 20px;
-    height: 70%;
+@keyframes skill-prof-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.add-skills-wrapper {
+  height: 25%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.skills-wrapper {
+  padding: 20px;
+  height: 70%;
   display: flex;
   flex-flow: column;
   justify-content: space-around;
 }
 
-@media all and (max-width:770px){
-    .add-skills-wrapper{
-        height: 15%;
-    }
-    .skills-wrapper{
-        height: 80%;
-    }
+@media all and (max-width:770px) {
+  .add-skills-wrapper {
+    height: 15%;
+  }
 
-    .cap-text{
-        display: none;
-    }
+  .skills-wrapper {
+    height: 80%;
+  }
+
+  .cap-text {
+    display: none;
+  }
 }
 
 @media all and (max-height:500px) and (orientation:landscape) {
-    .skill-text{
-        font-size: calc(7px + 1vh);
-    }
-    .cap-text{
-        display: none;
-    }
-    .skill-profiency{
-        font-size: calc(5px + 1vh);
-    }
-    .skill-bar-wrapper{
-        height: calc(7px + 1vh);
-    }
-    .cap-header{
-        font-size: calc(6px + 1vh);
-    }
-
-    .svg-wrapper{
-        height: calc(40px + 3vh);
-        width: calc(40px + 3vh);
-    }
-
-    svg{
-        height: calc(15px + 3vh);
-        width: calc(15px + 3vh);
-    }
+  .skill-text {
+    font-size: calc(7px + 1vh);
   }
+
+  .cap-text {
+    display: none;
+  }
+
+  .skill-profiency {
+    font-size: calc(5px + 1vh);
+  }
+
+  .skill-bar-wrapper {
+    height: calc(7px + 1vh);
+  }
+
+  .cap-header {
+    font-size: calc(6px + 1vh);
+  }
+
+  .svg-wrapper {
+    height: calc(40px + 3vh);
+    width: calc(40px + 3vh);
+  }
+
+  svg {
+    height: calc(15px + 3vh);
+    width: calc(15px + 3vh);
+  }
+}

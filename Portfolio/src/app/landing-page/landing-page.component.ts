@@ -1,5 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component } from '@angular/core';
 import { AppService } from '../app.service';
 
 @Component({
@@ -7,16 +6,12 @@ import { AppService } from '../app.service';
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.css']
 })
-export class LandingPageComponent  {
-  public gitRepos;
-  // public cardImageObj = {
-  //   "css":"card-img-left",
-  //   "url":"../../assets/images/IMG-20180429-WA0001-01.jpeg"
-  // }
+export class LandingPageComponent {
+
   constructor(public appService: AppService) { }
 
 
-  
+
 
 
 
