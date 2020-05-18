@@ -15,6 +15,10 @@ export class SkillsProjectsComponent implements OnInit {
       'profiency': 90
     },
     {
+      'skill': 'React',
+      'profiency': 60
+    },
+    {
       'skill': 'Java',
       'profiency': 80
     },
