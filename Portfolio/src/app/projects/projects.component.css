@@ -131,7 +131,7 @@ a {
 
 .project-cards-wrapper {
   justify-content: center;
-  align-content: center;
+  align-content: flex-start;
   height: 65%;
   flex-wrap: wrap;
 }
